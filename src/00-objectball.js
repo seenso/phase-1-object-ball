@@ -115,11 +115,44 @@ let gameObject = () => {
   };
 };
 
-let numPointsScored = () => {};
+let numPointsScored = (playerName) => {
+  for (let gameKey in gameObject) { //either home or away
+    let teamObj = game[gameKey];
+    for(let team in teamObj) { //team name, colors, players
+      let playerObj = teamObj.players;
+      for (let player in playerObj) { //players
+        if (player === playerName) {
+          return playerObj[player].points;
+        }
+      }
+    }
+  }
+};
 
-let shoeSize = () => {};
+let shoeSize = (playerName) => { //copy&pasted numPointsScored & set to return shoe (not points)
+  for (let gameKey in gameObject) { //either home or away
+    let teamObj = game[gameKey];
+    for(let team in teamObj) { //team name, colors, players
+      let playerObj = teamObj.players;
+      for (let player in playerObj) { //players
+        if (player === playerName) {
+          return playerObj[player].shoe;
+        }
+      }
+    }
+  }
+};
 
-let teamColors = () => {};
+let teamColors = (teamName) => {
+  for (let gameKey in gameObject) { //either home or away
+    let teamObj = game[gameKey];
+    for(let team in teamObj) { //team name, colors, players
+      if(team === teamName) {
+        return gameObject.colors;
+      }
+    }
+  }
+};
 
 let teamNames = () => {};
 
