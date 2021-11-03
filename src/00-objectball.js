@@ -115,4 +115,14 @@ let gameObject = () => {
   };
 };
 
-console.log(gameObject());
+let numPointsScored = () => {};
+
+let shoeSize = () => {};
+
+let teamColors = () => {};
+
+let teamNames = () => {};
+
+let playeNumbers = () => {};
+
+let playerStats = () => {};
