@@ -123,6 +123,6 @@ let teamColors = () => {};
 
 let teamNames = () => {};
 
-let playeNumbers = () => {};
+let playerNumbers = () => {};
 
 let playerStats = () => {};
