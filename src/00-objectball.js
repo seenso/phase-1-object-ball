@@ -154,8 +154,38 @@ let teamColors = (teamName) => {
   }
 };
 
-let teamNames = () => {};
+let teamNames = () => {
+  //return an arr of team names
+  let teamNames = [];
+  for (let gameKey in gameObject) {
+    if (gameKey === "teamName") {
+      teamNames.push(gameKey.teamName);
+    }
+  }
+  return teamNames;
+};
 
-let playerNumbers = () => {};
+let playerNumbers = (teamName) => {
+  //return arr of jersey numbers for team
+  let jerseyNumArr = [];
 
-let playerStats = () => {};
+  for (let gameKey in gameObject) { //either home or away
+    let teamObj = game[gameKey];
+    for(let team in teamObj) { //team name, colors, players
+      let playerObj = teamObj.players;
+      for (let player in playerObj) { //players
+          jerseyNumArr.push(player.number);
+      }
+    }
+  }
+
+  return jerseyNumArr;
+};
+
+let playerStats = (playerName) => {
+  //return obj of player's stats
+  let playerStat = {};
+  return playerStat;
+};
+
+let bigShoeRebounds = () => {};
